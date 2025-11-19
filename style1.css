@@ -1,0 +1,417 @@
+     * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 680px;
+            width: 100%;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            font-size: 48px;
+            font-weight: bold;
+            color: #1e3c72;
+        }
+
+        .title {
+            color: white;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .link-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px 24px;
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .link-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            background: #f8f9fa;
+        }
+
+        .link-content {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex: 1;
+        }
+
+        .link-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .link-text {
+            flex: 1;
+        }
+
+        .link-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #1e3c72;
+        }
+
+        .link-description {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .link-arrow {
+            color: #999;
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .link-card:hover .link-arrow {
+            transform: translateX(4px);
+            color: #1e3c72;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .social-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-icon:hover {
+            background: white;
+            color: #1e3c72;
+            transform: scale(1.1);
+        }
+
+        .qr-section {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            margin-top: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .qr-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e3c72;
+            margin-bottom: 16px;
+        }
+
+        .qr-container {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .qr-placeholder {
+            width: 200px;
+            height: 200px;
+            background: white;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+        }
+
+        .qr-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 16px;
+        }
+
+        .qr-upload {
+            position: relative;
+            display: inline-block;
+        }
+
+        .qr-upload input[type="file"] {
+            display: none;
+        }
+
+        .qr-upload-btn {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .qr-upload-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(30, 60, 114, 0.3);
+        }
+
+        .qr-image {
+            max-width: 200px;
+            max-height: 200px;
+            border-radius: 8px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 32px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 16px;
+            }
+
+            .container {
+                padding: 0;
+            }
+
+            .logo {
+                width: 100px;
+                height: 100px;
+                font-size: 40px;
+                margin-bottom: 16px;
+            }
+
+            .title {
+                font-size: 22px;
+                margin-bottom: 6px;
+            }
+
+            .subtitle {
+                font-size: 14px;
+            }
+
+            .profile-section {
+                margin-bottom: 24px;
+            }
+
+            .links-container {
+                gap: 12px;
+            }
+
+            .link-card {
+                padding: 14px 16px;
+                border-radius: 10px;
+            }
+
+            .link-content {
+                gap: 12px;
+            }
+
+            .link-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 20px;
+                border-radius: 8px;
+            }
+
+            .link-title {
+                font-size: 15px;
+                margin-bottom: 2px;
+            }
+
+            .link-description {
+                font-size: 12px;
+                line-height: 1.4;
+            }
+
+            .link-arrow {
+                font-size: 18px;
+            }
+
+            .qr-section {
+                padding: 20px 16px;
+                margin-top: 20px;
+                border-radius: 10px;
+            }
+
+            .qr-title {
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+
+            .qr-container {
+                padding: 16px;
+                margin-bottom: 10px;
+            }
+
+            .qr-placeholder {
+                width: 70px;
+                height: 70px;
+                font-size: 56px;
+            }
+
+            .qr-image {
+                max-width: 180px;
+                max-height: 180px;
+            }
+
+            .qr-description {
+                font-size: 13px;
+                margin-bottom: 12px;
+                padding: 0 8px;
+            }
+
+            .qr-upload-btn {
+                padding: 12px 28px;
+                font-size: 15px;
+                border-radius: 10px;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .social-links {
+                gap: 12px;
+                margin-top: 24px;
+            }
+
+            .social-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 18px;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .footer {
+                margin-top: 24px;
+                font-size: 12px;
+                padding: 0 8px;
+            }
+
+            /* Improve touch targets */
+            .link-card {
+                min-height: 72px;
+            }
+
+            /* Better spacing for readability */
+            .link-text {
+                min-width: 0;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 380px) {
+            .logo {
+                width: 90px;
+                height: 90px;
+                font-size: 36px;
+            }
+
+            .title {
+                font-size: 20px;
+            }
+
+            .qr-placeholder,
+            .qr-image {
+                width: 160px;
+                height: 160px;
+                max-width: 160px;
+                max-height: 160px;
+            }
+
+            .qr-placeholder {
+                font-size: 48px;
+            }
+        }
+
+        /* Improve tap/click experience */
+        * {
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+        }
+
+        .link-card,
+        .social-icon,
+        .qr-upload-btn {
+            -webkit-tap-highlight-color: rgba(30, 60, 114, 0.1);
+            user-select: none;
+        }

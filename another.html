@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="style1.css" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Legal Council MEF - Links</title>
+    <style>
+   
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-section">
+            <div class="logo">⚖️</div>
+            <h1 class="title">Kimleng Gold Samangka</h1>
+            <p class="subtitle">Embassment</p>
+        </div>
+
+        <div class="links-container">
+            <a href="https://web.facebook.com/kunthy.kimleng" class="link-card" onclick="handleClick(event, 'Website')">
+                <div class="link-content">
+                    <div class="link-icon">🌐</div>
+                    <div class="link-text">
+                        <div class="link-title">Official Website</div>
+                        <div class="link-description">Visit our main website</div>
+                    </div>
+                </div>
+                <span class="link-arrow">→</span>
+            </a>
+
+            <a href="#" class="link-card" onclick="handleClick(event, 'Services')">
+                <div class="link-content">
+                    <div class="link-icon">📋</div>
+                    <div class="link-text">
+                        <div class="link-title">Legal Services</div>
+                        <div class="link-description">Explore our legal offerings</div>
+                    </div>
+                </div>
+                <span class="link-arrow" >→</span>
+
+            <a href="#" class="link-card" onclick="handleClick(event, 'Consultation')">
+                <div class="link-content">
+                    <div class="link-icon">📅</div>
+                    <div class="link-text">
+                        <div class="link-title">Book Consultation</div>
+                        <div class="link-description">Schedule a meeting with our team</div>
+                    </div>
+                </div>
+                <span class="link-arrow">→</span>
+            </a>
+
+            <a href="#" class="link-card" onclick="handleClick(event, 'Resources')">
+                <div class="link-content">
+                    <div class="link-icon">📚</div>
+                    <div class="link-text">
+                        <div class="link-title">Legal Resources</div>
+                        <div class="link-description">Access guides and documents</div>
+                    </div>
+                </div>
+                <span class="link-arrow">→</span>
+            </a>
+
+            <a href="#" class="link-card" onclick="handleClick(event, 'Contact')">
+                <div class="link-content">
+                    <div class="link-icon">✉️</div>
+                    <div class="link-text">
+                        <div class="link-title">Contact Us</div>
+                        <div class="link-description">Get in touch with our office</div>
+                    </div>
+                </div>
+                <span class="link-arrow">→</span>
+            </a>
+
+            <a href="#" class="link-card" onclick="handleClick(event, 'Newsletter')">
+                <div class="link-content">
+                    <div class="link-icon">📰</div>
+                    <div class="link-text">
+                        <div class="link-title">Newsletter</div>
+                        <div class="link-description">Subscribe for legal updates</div>
+                    </div>
+                </div>
+                <span class="link-arrow">→</span>
+            </a>
+        </div>
+
+        <div class="qr-section">
+            <div class="qr-title">Scan QR Code</div>
+            <div class="qr-container">
+                <div class="qr-placeholder">
+                       <img src="QR.png">
+                </div>
+            </div>
+            <p class="qr-description">Upload a QR code to display for scanning</p>
+            <div class="qr-upload">
+             
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="#" class="social-icon" onclick="handleClick(event, 'Facebook')" title="Facebook">
+                <span>f</span>
+            </a>
+            <a href="#" class="social-icon" onclick="handleClick(event, 'Twitter')" title="Twitter">
+                <span>𝕏</span>
+            </a>
+            <a href="#" class="social-icon" onclick="handleClick(event, 'LinkedIn')" title="LinkedIn">
+                <span>in</span>
+            </a>
+            <a href="#" class="social-icon" onclick="handleClick(event, 'Email')" title="Email">
+                <span>@</span>
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 Legal Council MEF. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        function loadQR(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const qrDisplay = document.getElementById('qrDisplay');
+                    qrDisplay.innerHTML = `<img src="${e.target.result}" alt="QR Code" class="qr-image">`;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function handleClick(event, linkName) {
+            event.preventDefault();
+            console.log(`Clicked: ${linkName}`);
+            // Replace with actual URLs
+            // window.location.href = 'your-actual-url';
+            alert(`This would navigate to: ${linkName}\n\nReplace the # in href with your actual URLs.`);
+        }
+
+        // Add entrance animation to cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.link-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.4s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        });
+    </script>
+</body>
+</html>
